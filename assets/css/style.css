@@ -95,8 +95,7 @@ html {
   position: relative;
   margin-top: 46px;
   padding-top: 50%;
-  background: url("./assets/img/slider/slider2.jpg") top center / cover
-    no-repeat;
+  background: url("../img/slider/slider1.jpg") top center / cover no-repeat;
 }
 
 #slider .text-content {
