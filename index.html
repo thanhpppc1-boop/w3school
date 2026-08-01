@@ -17,7 +17,7 @@
     />
   </head>
   <body>
-    <div id="main">
+    <d iv id="main">
       <div id="header">
         <ul id="nav">
           <li><a href="#">Home</a></li>
@@ -25,15 +25,16 @@
           <li><a href="#tour">Tour</a></li>
           <li><a href="#contact">Contact</a></li>
           <li>
-            <a href="">More▼</a>
+            <a href="#">More▼</a>
             <ul class="subnav">
-              <li><a href="">Merchandise</a></li>
-              <li><a href="">Extras</a></li>
-              <li><a href="">Media</a></li>
+              <li><a href="#">Merchandise</a></li>
+              <li><a href="#">Extras</a></li>
+              <li><a href="#">Media</a></li>
             </ul>
           </li>
         </ul>
         <div class="search"><i class="ti-search"></i></div>
+        <div id="mobile-menu" class="bar-button"><i class="ti-menu"></i></div>
       </div>
       <div id="slider">
         <div class="text-content">
@@ -244,14 +245,14 @@
             ><i class="ti-youtube"></i
           ></a>
           <p>
-            Design by
+            Designed by
             <a href="https://github.com/thanhpppc1-boop" class="me"
               >Kim Thành</a
             >
           </p>
         </div>
       </div>
-    </div>
+    </d>
 
     <div class="modal js-modal">
       <div class="modal-container js-modal-container">
@@ -289,7 +290,24 @@
         </footer>
       </div>
     </div>
+    <script>
+      var header = document.getElementById("header");
+      var moblieMenu = document.getElementById("mobile-menu");
+      var headerHight = header.clientHeight;
+      moblieMenu.onclick = function () {
+        var isClosed = header.clientHeight === headerHight;
+        if (isClosed) header.style.height = "auto";
+        else header.style.height = null;
+      };
 
+      var menuItems = document.querySelectorAll("#nav li a[href*='#']");
+      for (var i = 0; i < menuItems.length; i++) {
+        var menuItem = menuItems[i];
+        menuItem.onclick = function () {
+          header.style.height = null;
+        };
+      }
+    </script>
     <script>
       const buyBtns = document.querySelectorAll(".js-buy-tickets");
       const modal = document.querySelector(".js-modal");

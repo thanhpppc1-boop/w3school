@@ -22,16 +22,27 @@ html {
   z-index: 1;
 }
 
-#header .search {
+#header .search,
+.bar-button {
   color: white;
   float: right;
   line-height: 46px;
   padding: 0 21px;
 }
 
+.bar-button {
+  display: none;
+}
+
 #header .search:hover {
   background-color: red;
   cursor: pointer;
+}
+
+#header .bar-button:hover {
+  background-color: #ccc;
+  cursor: pointer;
+  color: black;
 }
 #nav {
   display: inline-block;
@@ -118,9 +129,9 @@ html {
 
 #content .content-sec {
   width: 800px;
-  margin-right: auto;
-  margin-left: auto;
-  padding: 64px 12px;
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 64px 16px;
 }
 
 #content .content-sec .section-heading {
@@ -177,9 +188,9 @@ html {
 }
 
 .tour-section .content-sec {
-  margin: 0 246px;
+  max-width: 800px;
+  margin: 0 auto;
   padding: 64px 16px;
-  height: 846px;
 }
 
 .tour-section .section-heading {
@@ -224,6 +235,12 @@ html {
   margin-top: 32px;
   margin-left: -8px;
   margin-right: -8px;
+}
+
+.place-list::after {
+  content: "";
+  display: block;
+  clear: both;
 }
 .place-item {
   float: left;
@@ -462,5 +479,70 @@ footer.modal-footer {
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+/* tablet */
+@media only screen and (min-width: 46.25em) and (max-width: 63.938em) {
+  #content .content-sec {
+    width: 100%;
+  }
+
+  .text-content .text-header {
+    font-size: 24px;
+  }
+}
+
+/* Mobile */
+@media only screen and (max-width: 46.188em) {
+  #content .content-sec {
+    width: 100%;
+  }
+
+  .team .member-list {
+    min-width: 100%;
+  }
+  .team .member-1 {
+    min-width: 65%;
+  }
+  .place-item {
+    min-width: 100%;
+    padding-bottom: 16px;
+  }
+
+  /* .tour-section .content-sec {
+    height: 1909px;
+  } */
+
+  .info,
+  .contact-input,
+  .col {
+    width: 100%;
+  }
+
+  .col-half .form-input {
+    margin-top: 8px;
+  }
+  .col-full .form-input {
+    margin-top: 0;
+  }
+
+  .text-content {
+    display: none;
+  }
+
+  #nav > li {
+    display: block;
+  }
+
+  #header .search {
+    display: none;
+  }
+
+  #header {
+    overflow: hidden;
+  }
+  .bar-button {
+    display: block;
   }
 }
